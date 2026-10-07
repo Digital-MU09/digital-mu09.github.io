@@ -1,12 +1,44 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikko</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>طالب ذكاء اصطناعي، أبني وأتعلّم | digital-mu09</title>
+<meta name="description" content="Personal site of an AI and computer science student.">
+<meta name="color-scheme" content="dark light">
+<script>try{var d=document.documentElement,s=localStorage;var th=s.getItem('theme')||(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');var l=s.getItem('lang')||'ar';d.dataset.theme=th;d.lang=l;d.dir=l==='ar'?'rtl':'ltr'}catch(e){}</script>
+<link rel="stylesheet" href="assets/css/tokens.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<script type="module" src="assets/js/main.js" data-root="./"></script>
 </head>
 <body>
-    <h1>Purr~</h1>
-    <p>Meow!</p>
+<a class="skip" href="#main" data-i18n="skip">تخطَّ إلى المحتوى</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="brand" href="./">digital-mu09</a>
+<nav aria-label="التنقل الرئيسي" data-i18n-aria="nav.label"><a href="./" aria-current="page" data-i18n="nav.home">الرئيسية</a><a href="about/" data-i18n="nav.about">نبذة</a><a href="projects/" data-i18n="nav.projects">المشاريع</a><a href="blog/" data-i18n="nav.blog">المدونة</a><a href="links/" data-i18n="nav.links">روابطي</a><a href="uses/" data-i18n="nav.uses">أدواتي</a><a href="contact/" data-i18n="nav.contact">تواصل</a></nav>
+<div class="tools">
+<button type="button" id="lang-toggle" aria-label="Language">EN</button>
+<button type="button" id="theme-toggle" data-i18n-aria="theme" aria-label="تبديل المظهر">◐</button>
+</div>
+</div>
+</header>
+<main id="main" class="wrap">
+<section class="hero">
+<div>
+<h1 data-i18n="home.title">طالب ذكاء اصطناعي، أبني وأتعلّم</h1>
+<p class="lead" data-i18n="home.lead">أدرس الذكاء الاصطناعي وعلوم الحاسوب في السنة الثانية. هنا مشاريعي وملاحظات تعلّمي.</p>
+<p class="actions"><a class="btn" href="projects/" data-i18n="home.cta.projects">عرض المشاريع</a><a class="btn ghost" href="contact/" data-i18n="home.cta.contact">تواصل معي</a></p>
+</div>
+<aside class="now" aria-labelledby="now-l">
+<p id="now-l" class="now-label" data-i18n="home.now.label">أعمل الآن على</p>
+<p class="now-title" data-i18n="home.now.text">نظام فرز النفايات بالذكاء الاصطناعي</p>
+<p class="status" data-i18n="home.now.status">قيد التنفيذ</p>
+</aside>
+</section>
+</main>
+<footer class="site-footer"><div class="wrap" data-i18n="footer">© digital-mu09. مبني بـ HTML وCSS وJS فقط.</div></footer>
 </body>
 </html>

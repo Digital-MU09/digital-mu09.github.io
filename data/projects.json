@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ai-waste-segregation",
+    "title": {
+      "ar": "نظام فرز النفايات بالذكاء الاصطناعي",
+      "en": "AI Waste Segregation System"
+    },
+    "summary": {
+      "ar": "نظام يفرز النفايات باستخدام الذكاء الاصطناعي. المشروع قيد التطوير حالياً.",
+      "en": "A system that sorts waste using AI. The project is currently in development."
+    },
+    "tags": [],
+    "repo": null,
+    "demo": null,
+    "image": null,
+    "featured": true,
+    "status": "in-progress",
+    "date": "2026-10"
+  }
+]

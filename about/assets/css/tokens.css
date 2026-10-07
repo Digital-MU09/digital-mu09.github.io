@@ -1,0 +1,27 @@
+:root{
+  --font-ar:"Tajawal","Cairo","Segoe UI",Tahoma,system-ui,sans-serif;
+  --font-en:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font:var(--font-ar);
+  --space-1:.25rem;--space-2:.5rem;--space-3:1rem;--space-4:1.5rem;--space-5:2.5rem;--space-6:4rem;
+  --radius-s:.4rem;--radius-m:.9rem;
+  --measure:62ch;--wrap:68rem;
+}
+:root[lang="en"]{--font:var(--font-en)}
+:root,:root[data-theme="dark"]{
+  --color-bg:#121820;
+  --color-surface:#19212b;
+  --color-line:#2a3542;
+  --color-text:#e6eaf0;
+  --color-muted:#9aa6b5;
+  --color-accent:#8fb8de;
+  --color-on-accent:#0f1720;
+}
+:root[data-theme="light"]{
+  --color-bg:#f5f7fa;
+  --color-surface:#ffffff;
+  --color-line:#d5dce5;
+  --color-text:#16202b;
+  --color-muted:#566373;
+  --color-accent:#245f8f;
+  --color-on-accent:#ffffff;
+}

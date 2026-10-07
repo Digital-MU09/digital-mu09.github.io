@@ -1,0 +1,12 @@
+*,*::before,*::after{box-sizing:border-box}
+html{color-scheme:dark light;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--color-bg);color:var(--color-text);font-family:var(--font);font-size:1.0625rem;line-height:1.75}
+h1,h2{line-height:1.25;margin:0 0 var(--space-3);font-weight:700}
+h1{font-size:clamp(2rem,5.5vw,3.4rem);letter-spacing:-.01em}
+h2{font-size:1.35rem}
+p{margin:0 0 var(--space-3)}
+a{color:var(--color-accent);text-underline-offset:.2em}
+:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;inset-inline-start:var(--space-3);top:-4rem;background:var(--color-accent);color:var(--color-on-accent);padding:var(--space-2) var(--space-3);border-radius:var(--radius-s);z-index:10}
+.skip:focus{top:var(--space-2)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
