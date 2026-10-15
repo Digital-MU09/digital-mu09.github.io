@@ -1,0 +1,86 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const accounts = [
+  { label: 'GitHub', href: 'https://github.com/Digital-MU09' },
+  { label: 'Facebook', href: 'https://www.facebook.com/muium9/' },
+  { label: 'Instagram', href: 'https://www.instagram.com/egotisticbubble/' },
+  { label: 'Reddit', href: 'https://www.reddit.com/user/Aryll09/' },
+  { label: 'X', href: 'https://x.com/aryll09' },
+  { label: 'Pinterest', href: 'https://www.pinterest.com/raw_vec/_profile/' },
+];
+---
+
+<Base title="Contact" description="Where to find me online.">
+  <main>
+    <h1>Contact</h1>
+    <ul role="list">
+      {
+        accounts.map((account) => (
+          <li>
+            <a href={account.href} target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">→</span> {account.label}
+              <span class="sr-only"> (opens in a new tab)</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Base>
+
+<style>
+  main {
+    padding-top: 32px;
+  }
+
+  h1 {
+    margin: 0 0 16px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  a {
+    display: inline-block;
+    padding: 8px 0;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (min-width: 860px) {
+    main {
+      padding-top: 56px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    a {
+      padding: 6px 0;
+    }
+  }
+</style>

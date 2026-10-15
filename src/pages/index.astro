@@ -1,0 +1,119 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base description="Hi, I post whatever sparks my interest.">
+  <main>
+    <div class="intro">
+      <h1 class="lead">Hi, I post whatever sparks my interest.</h1>
+      <p>
+        Expect a mix of open media and articles where I share my (very) opinionated views, I
+        definitely have a habit of overtalking. I’m not here to grind out daily content, I only
+        post when I have a good reason to.
+      </p>
+      <p>
+        Visually, I’m a bit of a perfectionist. I love highly curated, intentionally arranged
+        posts, but my ultimate aesthetic is simplicity. I like to keep things clean and never
+        over-do it.
+      </p>
+      <p>Feel free to be.</p>
+      <a
+        class="youtube"
+        href="https://youtube.com/playlist?list=PLHg7B8Odtgbp72C6gqGRM9xEvxLASr9OX"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span aria-hidden="true">→</span> Fav-Dump
+        <span class="sr-only"> (YouTube playlist, opens in a new tab)</span>
+      </a>
+    </div>
+    <div class="frame">
+      <img src="/images/drawing.jpg" width="857" height="406" alt="" />
+    </div>
+  </main>
+</Base>
+
+<style>
+  main {
+    padding-top: 32px;
+  }
+
+  p {
+    margin: 0 0 16px;
+  }
+
+  .lead {
+    margin: 0 0 16px;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  .youtube {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .frame {
+    margin-top: 28px;
+    border: 2px solid var(--ink);
+    line-height: 0;
+  }
+
+  .frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+  }
+
+  @media (min-width: 860px) {
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+      gap: 64px;
+      align-items: start;
+      padding-top: 56px;
+    }
+
+    .intro {
+      max-width: 46ch;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .lead {
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .youtube {
+      margin-top: 16px;
+      padding: 0;
+    }
+
+    .frame {
+      margin-top: 0;
+    }
+  }
+</style>
