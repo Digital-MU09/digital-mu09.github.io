@@ -1,0 +1,76 @@
+---
+const path = Astro.url.pathname;
+const links = [
+  { href: '/blog/', label: 'blogs' },
+  { href: '/projects/', label: 'projects' },
+  { href: '/contact/', label: 'contact' },
+];
+const isCurrent = (href: string) => path.startsWith(href.slice(0, -1));
+---
+
+<header>
+  <a class="name" href="/">Aryll Sinclair</a>
+  <nav aria-label="Main">
+    {
+      links.map((link) => (
+        <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+          {link.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
+
+<style>
+  header {
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .name {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 10vw, 3.25rem);
+    font-weight: 400;
+    line-height: 1.1;
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    gap: 28px;
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  nav a {
+    padding: 8px 0;
+    text-decoration: none;
+  }
+
+  nav a:hover,
+  nav a[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+
+  @media (min-width: 860px) {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 20px;
+    }
+
+    nav {
+      gap: 36px;
+      margin-top: 0;
+      padding-bottom: 6px;
+    }
+
+    nav a {
+      padding: 0;
+    }
+  }
+</style>

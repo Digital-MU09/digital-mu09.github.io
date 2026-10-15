@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://digital-mu09.github.io/sitemap.xml

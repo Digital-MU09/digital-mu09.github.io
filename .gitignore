@@ -1,3 +1,7 @@
-.DS_Store
 node_modules/
-*.log
+dist/
+.astro/
+.env
+.env.production
+.DS_Store
+npm-debug.log*
