@@ -1,11 +1,40 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+
+const posts = (
+  await getCollection('blog', ({ data }) => (import.meta.env.PROD ? !data.draft : true))
+).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
 ---
 
 <Base title="Blogs" description="Posts and articles.">
   <main>
     <h1>Blogs</h1>
-    <p>Empty for now :3</p>
+    {
+      posts.length === 0 ? (
+        <p>Empty for now :3</p>
+      ) : (
+        <ul role="list">
+          {posts.map((post) => (
+            <li>
+              <h2>
+                <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+              </h2>
+              <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+              <p>{post.data.description}</p>
+            </li>
+          ))}
+        </ul>
+      )
+    }
   </main>
 </Base>
 
@@ -19,6 +48,36 @@ import Base from '../../layouts/Base.astro';
     font-size: 24px;
     font-weight: 500;
     line-height: 1.3;
+  }
+
+  ul {
+    display: grid;
+    gap: 28px;
+    max-width: 70ch;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  h2 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  h2 a {
+    display: inline-block;
+    padding: 4px 0;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+  }
+
+  time {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
   }
 
   p {
